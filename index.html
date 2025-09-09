@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Falling Balls</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div class="wrapper">
+		<header class="hud">
+			<div class="title">Kitty Catch</div>
+			<div class="stats">
+				<div id="score">Score: 0</div>
+				<div id="lives">Lives: 3</div>
+				<div id="combo">Combo: x1</div>
+			</div>
+		</header>
+		<main class="game-area">
+			<canvas id="game" width="390" height="780"></canvas>
+			<div class="overlay hidden" id="overlay">
+				<div class="card">
+					<h2 id="overlay-title">Kitty Catch</h2>
+					<p id="overlay-sub">Catch the balls. Miss three and it's game over.</p>
+					<div class="controls">
+						<p>Move: ← →  or  A D  •  Mouse/Touch also works</p>
+					</div>
+					<div id="pause-controls" class="controls" style="display:none; text-align:left;">
+						<div style="margin:8px 0 10px; font-weight:600;">Difficulty</div>
+						<label style="display:block; margin-bottom:6px;"><input type="radio" name="difficulty" value="easy"> Easy</label>
+						<label style="display:block; margin-bottom:6px;"><input type="radio" name="difficulty" value="normal" checked> Normal</label>
+						<label style="display:block; margin-bottom:10px;"><input type="radio" name="difficulty" value="hard"> Hard</label>
+						<button id="toggle-music" class="btn" style="width:100%; margin-top:6px;">Mute Music</button>
+						<div style="margin:14px 0 8px; font-weight:600;">Graphics</div>
+						<label style="display:block; margin-bottom:6px;"><input type="checkbox" id="gfx-starfield" checked> Starfield</label>
+						<label style="display:block; margin-bottom:6px;"><input type="checkbox" id="gfx-trails" checked> Motion Trails</label>
+						<label style="display:block; margin-bottom:6px;"><input type="checkbox" id="gfx-particles" checked> Particles</label>
+						<label style="display:block; margin-bottom:6px;"><input type="checkbox" id="gfx-shake" checked> Screen Shake</label>
+					</div>
+					<button id="start-btn" class="btn">Start</button>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">Made with ♥</footer>
+	</div>
+	<audio id="bgm" src="Sakura-Girl-Daisy-chosic.com_.mp3" preload="auto" loop playsinline aria-hidden="true"></audio>
+	<audio id="death-bgm" src="purrple-cat-floating-castle(chosic.com).mp3" preload="auto" loop playsinline aria-hidden="true"></audio>
+	<script src="game.js"></script>
+</body>
+</html>
+
