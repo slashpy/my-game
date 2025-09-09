@@ -64,7 +64,7 @@
 	resizeCanvasForHiDpi();
 	window.addEventListener('resize', resizeCanvasForHiDpi);
 
-	const PADDLE_WIDTH = 126;
+	const PADDLE_WIDTH = 148;
 	const PADDLE_HEIGHT = 14;
 	const PADDLE_Y = GAME_HEIGHT - 34;
 	const PADDLE_SPEED = 420; // px/sec
@@ -691,4 +691,5 @@
 	// Prepare audio priming listeners initially
 	setupFirstInteractionAudioPrime();
 })();
+
 
