@@ -1,0 +1,113 @@
+:root {
+	--bg: #1d1823;
+	--panel: #2a2030;
+	--muted: #b7a6f9;
+	--text: #f5e9f2;
+	--accent: #e78bbd; /* muted pink */
+	--accent-2: #9fc2ef; /* muted baby blue */
+	--success: #7fd9bf;
+	--danger: #f28a8a;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+	margin: 0;
+	height: 100%;
+	background:
+		radial-gradient(1400px 900px at 20% -10%, #2b2232 0%, var(--bg) 60%);
+	color: var(--text);
+	font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+.grayscale * {
+	filter: grayscale(100%) contrast(105%);
+}
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 16px;
+}
+
+.hud {
+	width: 100%;
+	max-width: 560px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 14px;
+	background: rgba(34, 28, 38, 0.7);
+	backdrop-filter: blur(8px);
+	border: 1px solid rgba(231,139,189,0.25);
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.title {
+	font-weight: 800;
+	letter-spacing: 0.3px;
+	color: #e78bbd;
+}
+
+.stats { display: flex; gap: 12px; font-weight: 600; }
+
+.game-area {
+	position: relative;
+	margin-top: 16px;
+}
+
+canvas#game {
+	background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+	border-radius: 16px;
+	border: 1px solid rgba(231,139,189,0.2);
+	box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+	max-width: 100%;
+}
+
+.overlay {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	background: rgba(18, 14, 21, 0.6);
+	backdrop-filter: blur(3px);
+	border-radius: 16px;
+}
+
+.overlay.hidden { display: none; }
+
+.card {
+	background: var(--panel);
+	border: 1px solid rgba(231,139,189,0.2);
+	border-radius: 16px;
+	padding: 20px;
+	width: min(92vw, 420px);
+	text-align: center;
+	box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.card h2 { margin: 8px 0 6px; }
+.card p { margin: 0 0 14px; color: var(--muted); }
+
+.controls { color: var(--muted); font-size: 14px; }
+
+.btn {
+	background: linear-gradient(135deg, var(--accent), var(--accent-2));
+	border: none;
+	color: #241f29;
+	font-weight: 800;
+	padding: 10px 16px;
+	border-radius: 999px;
+	cursor: pointer;
+	box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.footer { margin-top: 16px; color: var(--muted); font-size: 14px; opacity: 0.8; }
+
+@media (max-width: 520px) {
+	.hud { max-width: 100%; }
+}
+
